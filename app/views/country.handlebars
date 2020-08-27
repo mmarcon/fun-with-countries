@@ -1,0 +1,20 @@
+<div class="container-fluid mt-5">
+    <div class="row justify-content-md-center">
+        <div class="col-sm-3 mb-4 mb-md-0" style="background:url({{flag}}); background-size: contain; background-repeat: no-repeat; background-position: 50%; min-height: 150px">
+        </div>
+        <div class="col-sm-9">
+            <h1>The capital of <a href="/{{alpha3Code}}">{{name}}</a> ({{subregion}}) is {{capital}}.<br>
+                <small class="text-muted">
+                    {{#if borderCountries.length}}
+                    Its neighbouring countries are
+                    {{#each borderCountries}}
+                    <span><a href="/{{this.alpha3Code}}">{{this.name}}</a></span>{{#if @last}}.{{else}},{{/if}}
+                    {{/each}}
+                    {{else}}
+                    There are no neighbouring countries.
+                    {{/if}}
+                </small>
+            </h1>
+        </div>
+    </div>
+</div>

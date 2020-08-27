@@ -1,0 +1,19 @@
+{
+  "name": "fun-with-countries",
+  "version": "1.0.0",
+  "description": "MongoDB for VS Code demo app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Massimiliano Marcon <max.marcon@mongodb.com>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "mongodb": "^3.6.0"
+  },
+  "devDependencies": {
+    "semistandard": "^14.2.3"
+  }
+}
