@@ -1,0 +1,21 @@
+version: "3"
+services:
+  mongo:
+    image: 'mongo:4.4'
+    command: --port 27117
+    ports:
+    - "27117:27117"
+    volumes:
+    - "./data:/var/data"
+    container_name: mongo
+  app:
+    environment:
+    - MONGO_ENV=docker
+    - MONGODB_URI=mongodb://mongo:27117
+    - PORT=3000
+    build: .
+    ports:
+    - "3000:3000"
+    depends_on:
+    - mongo
+    container_name: app
