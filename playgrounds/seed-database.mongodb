@@ -46,8 +46,7 @@ async function seed() {
     db.all.drop();
     db.all.insertMany(data);
     const insertedDocs = db.all.estimatedDocumentCount();
-    db.all.createIndex({borders: 1});
-    db.all.createIndex({name: 1});
+    db.all.createIndex({alpha3Code: 1});
     return `Inserted ${insertedDocs} documents into '${db.all.getFullName()}'
 Number of indexes: ${db.all.getIndexes().length}`;
 }
