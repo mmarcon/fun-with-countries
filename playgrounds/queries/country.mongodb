@@ -1,0 +1,21 @@
+// Get country info
+// and attach names for the neighboring countries
+// https://docs.mongodb.com/manual/reference/operator/aggregation/lookup/#use-lookup-with-an-array
+function getCountryInfo(alpha3Code) {
+    return db.getSiblingDB('countries').getCollection('all').aggregate([{
+            $match: {
+                alpha3Code
+            }
+        },
+        {
+            $lookup: {
+                from: 'all',
+                localField: 'borders',
+                foreignField: 'alpha3Code',
+                as: 'borderCountries'
+            }
+        }
+    ]);
+}
+
+getCountryInfo('ITA');

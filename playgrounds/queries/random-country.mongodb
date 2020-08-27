@@ -1,0 +1,24 @@
+//Get a random country 
+db.getSiblingDB('countries').getCollection('all').aggregate([{
+    $sample: {
+        size: 1
+    }
+}]);
+
+// Get a random country
+// and attach names for the neighboring countries
+// https://docs.mongodb.com/manual/reference/operator/aggregation/lookup/#use-lookup-with-an-array
+db.getSiblingDB('countries').getCollection('all').aggregate([{
+        $sample: {
+            size: 1
+        }
+    },
+    {
+        $lookup: {
+            from: 'all',
+            localField: 'borders',
+            foreignField: 'alpha3Code',
+            as: 'borderCountries'
+        }
+    }
+]);
