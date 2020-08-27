@@ -3,7 +3,7 @@ const { MongoClient } = require('mongodb');
 const path = require('path');
 const exphbs = require('express-handlebars');
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 // If you are connecting to Atlas, you can pass your connection string
 // as an environment variable or assign it directly to the variable below.
 const mongodbUri = process.env.MONGODB_URI || 'mongodb://localhost:27017';
