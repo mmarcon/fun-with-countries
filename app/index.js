@@ -61,7 +61,7 @@ const getCountryAggregation = (alpha3Code) => [{
       res.render('country', country);
     });
 
-    app.listen(port, () => { console.log(`App listening on port ${port}`); });
+    app.listen(port, () => { console.log(`App listening at http://localhost:${port}`); });
   } catch (err) {
     console.log(err.stack);
   }
